@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-container {
+  background-color: black;
+}
+
+.header {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+.header img {
+  width: 120px;
+}
+
+.header ul {
+  display: inline-block;
+  padding-left: 60%;
+}
+
+.header li {
+  display: inline-block;
+  padding-right: 20px;
+  font-size: 15px;
+  text-align: right;
+}
