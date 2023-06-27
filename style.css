@@ -40,6 +40,10 @@ body {
   font-weight: bold;
 }
 
+.header ul li a:hover {
+  color: rgb(43, 223, 43);
+}
+
 .premium {
   background-color: rgb(29, 117, 222);
   color: white;
