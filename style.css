@@ -75,5 +75,16 @@ body {
 
 .ver-planos {
   border: 2px solid white;
+}
 
+.why-premium {
+  padding: 70px 140px;
+}
+
+.why-premium img {
+  margin-bottom: 30px;
+}
+
+.why-premium h4, p {
+  margin-bottom: 20px;
 }
