@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.header-container {
+  background-color: black;
+}
+
+.header {
+  color: white;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+}
+
+.header img {
+  width: 130px;
+}
+
+.header ul {
+  display: inline-block;
+  padding-left: 40%;
+}
+
+.header li {
+  display: inline-block;
+  padding-left: 20px;
+  text-align: right;
+}
