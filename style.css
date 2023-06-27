@@ -135,6 +135,9 @@ body {
 }
 
 .bands {
+  background-image: url('https://images.unsplash.com/photo-1611339555312-e607c8352fd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3BvdGlmeXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80');
+  background-position: center;
+  background-size: cover;
   padding: 30px;
   max-width: 450px;
   margin: 30px auto;
@@ -142,12 +145,18 @@ body {
   border-image: linear-gradient(45deg,red,blue) 1; 
 }
 
+.bands, .bands ol li a {
+  color: white;
+}
+
 .bands li {
   list-style: none;
+  text-shadow: #000 2px 3px 2px;
 }
 
 .bands h3 {
   padding-bottom: 20px;
+  text-shadow: #000 2px 3px 2px;
 }
 
 .bands ol a {
