@@ -7,7 +7,7 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-a {
+.header a, .premium a {
   text-decoration: none;
   color: white;
 }
@@ -91,4 +91,28 @@ a {
   margin-top: 60px;
   letter-spacing: 1px;
   font-weight: bold;
+}
+
+.choose-plan { 
+  background-color: #efefef;
+  padding-top: 80px;
+  text-align: center;
+}
+
+.choose-plan h2, h3 {
+  margin-bottom: 10px;
+}
+
+.bands {
+  margin-top: 50px;
+}
+
+.choose-plan h2 {
+  font-size: 35px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.choose-plan p {
+ font-size: 17px;
 }
