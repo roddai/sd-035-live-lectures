@@ -80,6 +80,7 @@ body {
 
 .comece-agora:hover, .ver-planos:hover {
   transform: scale(1.05);
+  transition: all 0.5s;
 }
 
 .ver-planos {
@@ -89,3 +90,23 @@ body {
   font-size: 14px;
 }
 
+.why-premium {
+  text-align: center;
+  padding: 75px 140px;
+}
+
+.why-premium div {
+  display: inline-block;
+  padding: 20px;
+}
+
+.why-premium h2 {
+  font-size: 36px;
+  letter-spacing: 1px;
+  margin-bottom: 70px;
+}
+
+.why-premium img {
+  width: 140px;
+  padding-bottom: 25px;
+}
