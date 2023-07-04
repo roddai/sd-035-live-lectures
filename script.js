@@ -14,7 +14,7 @@ if (num1 === num2) {
 // ====================================
 
 let fralda;
-let babyPeso = 16;
+const babyPeso = 16;
 
 if (typeof babyPeso !== 'number') {
   fralda = 'Insira valor númerico para o peso do bebê.'
