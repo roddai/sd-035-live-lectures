@@ -1,20 +1,16 @@
 // Nosso jogo
 const studentGame = [20, 19, 37, 47, 59, 23];
-console.log('Jogo do estudante:', studentGame);
 
 // Jogo sorteado
-const number1 = 20;
-const number2 = 17;
-const number3 = 33;
-const number4 = 23;
-const number5 = 59;
-const number6 = 19;
+const megaSenaNumbers = [];
 
-const megaSenaNumbers = [number1, number2, number3, number4, number5, number6];
-console.log('Jogo sorteado:', megaSenaNumbers);
+for (let index = 0; index < 6; index += 1) {
+  megaSenaNumbers.push(Math.floor(Math.random() * 60) + 1);
+}
 
 // Confere jogo
 let numberOfHits = 0;
+let hits = [];
 
 for (let index = 0; index < megaSenaNumbers.length; index += 1) {
   let drawnNumber = megaSenaNumbers[index];
@@ -24,8 +20,12 @@ for (let index = 0; index < megaSenaNumbers.length; index += 1) {
 
     if (drawnNumber === studentNumber) {
       numberOfHits += 1;
+      hits.push(drawnNumber);
     }
   }
 }
 
+console.log('Jogo sorteado:', megaSenaNumbers);
+console.log('Jogo do estudante:', studentGame);
 console.log('Quantidade de Acertos:', numberOfHits);
+console.log('Acertos:', hits);
