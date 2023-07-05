@@ -1,22 +1,31 @@
-const lotteryChecker = [34, 43, 23, 56, 28, 12];
+// Nosso jogo
+const studentGame = [20, 19, 37, 47, 59, 23];
+console.log('Jogo do estudante:', studentGame);
 
-console.log(lotteryChecker);
+// Jogo sorteado
+const number1 = 20;
+const number2 = 17;
+const number3 = 33;
+const number4 = 23;
+const number5 = 59;
+const number6 = 19;
 
-// console.log(lotteryChecker[0]);
-// console.log(lotteryChecker[1]);
-// console.log(lotteryChecker[2]);
-// console.log(lotteryChecker[3]);
-// console.log(lotteryChecker[4]);
-// console.log(lotteryChecker[5]);
+const megaSenaNumbers = [number1, number2, number3, number4, number5, number6];
+console.log('Jogo sorteado:', megaSenaNumbers);
 
-// console.log('O comprimento do array é: ' + lotteryChecker.length);
+// Confere jogo
+let numberOfHits = 0;
 
-// for (let index = 0; index < lotteryChecker.length; index += 1) {
-//   console.log(index);
-//   console.log(lotteryChecker[index]);
-//   console.log('---');
-// }
+for (let index = 0; index < megaSenaNumbers.length; index += 1) {
+  let drawnNumber = megaSenaNumbers[index];
 
-for (let value of lotteryChecker) {
-  console.log(value);
+  for (let indexGame = 0; indexGame < studentGame.length; indexGame += 1) {
+    let studentNumber = studentGame[indexGame];
+
+    if (drawnNumber === studentNumber) {
+      numberOfHits += 1;
+    }
+  }
 }
+
+console.log('Quantidade de Acertos:', numberOfHits);
