@@ -6,7 +6,13 @@ const rodsGame = [45, 60, 10, 20, 30, 40];
 const megaSenaNumbers = [];
 
 for (let index = 0; index < 6; index += 1) {
-  megaSenaNumbers.push(Math.floor(Math.random() * 10) + 1);
+  let number = Math.floor(Math.random() * 60) + 1;
+
+  if (megaSenaNumbers.includes(number)) {
+    index -= 1;
+  } else {
+    megaSenaNumbers.push(number);
+  }
 }
 
 // Confere jogo
