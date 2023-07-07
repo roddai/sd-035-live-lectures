@@ -1,4 +1,4 @@
-function sortNumbers (array) {
+const sortNumbers = (array) => {
   let temp;
 
   for (let index = 0; index < array.length; index += 1) {

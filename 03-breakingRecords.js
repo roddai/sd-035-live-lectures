@@ -1,4 +1,4 @@
-function breakingRecords(scores) {
+const breakingRecords = (scores) => {
 
   let max = scores[0];
   let min = scores[0];

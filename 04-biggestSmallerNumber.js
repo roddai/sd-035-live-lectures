@@ -1,4 +1,4 @@
-function biggestSmallerNumber (array) {
+const biggestSmallerNumber = (array) => {
   let bigger = array[0];
   let smaller = array[0];
   
