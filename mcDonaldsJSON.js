@@ -126,11 +126,18 @@ function addDiscount (category, value, discont) {
   }
 }
 
-addDiscount('sanduiches', 25.00, 10);
-// console.log(menu);
+function verifyWhoIs (who, category) {
+  if (who === 'Cadu' || who === 'Rods') {
+    addDiscount(category, 25.00, 10);
+    addProperty(category, 25.00);
+  }
+}
 
-addProperty('sanduiches', 25.00);
-addProperty('acompanhamentos', 15.00);
-addProperty('sobremesas', 9.90);
-addProperty('bebidas', 5.00);
+// verifyWhoIs('Cadu', 'sanduiches');
+verifyWhoIs('Ricardo', 'sanduiches');
 console.log(menu);
+
+// addProperty('acompanhamentos', 15.00);
+// addProperty('sobremesas', 9.90);
+// addProperty('bebidas', 5.00);
+// console.log(menu);
