@@ -1,5 +1,5 @@
 const menu = {
-  sandwiches: [
+  sanduiches: [
     {
       name: 'Big Mac',
       price: 26.90,
@@ -19,7 +19,7 @@ const menu = {
       calories: 944,
     },
   ],
-  sideDishes: [
+  acompanhamentos: [
     {
       name: 'Chicken McNuggets - 10 unidades',
       price: 16.90,
@@ -51,7 +51,7 @@ const menu = {
       calories: 422,
     },
   ],
-  desserts: [
+  sobremesas: [
     {
       name: 'McFlurry Ovomaltine Caramelo',
       price: 13.90,
@@ -71,7 +71,7 @@ const menu = {
       calories: 222,
     },
   ],
-  drinks: [
+  bebidas: [
     {
       name: 'Coca-Cola 300ml',
       price: 13.90,
@@ -84,3 +84,40 @@ const menu = {
     }
   ]
 }
+
+const newItem = {
+  name: 'X-Infarto',
+  price: 57.90,
+  ingredients: ['2 hambúrgueres', 'alface americana', 'queijo gorgonzola', 'molho especial', 'cebola', 'pão com gergelim'],
+  calories: 1690,
+};
+
+menu.sanduiches.push(newItem);
+// console.log(menu.sanduiches);
+
+/* 
+Adicionar a propriedade 'isExpensive' para todos os elementos de uma categoria
+do menu.
+Caso o preço do elemento seja maior que um valor estipulado, a propriedade
+'isExpensive' recebe o valor 'Muito caro!', senão, recebe o valor 'Tá de boa!'.
+Exemplo: addProperty('sobremesas', 9.90);
+*/
+
+function addProperty (category, value) {
+  for (let index = 0; index < menu[category].length; index += 1) {
+    let object = menu[category][index];
+    
+    if (object.price >= value) {
+      object.isExpensive = true;
+    } else {
+      object.isExpensive = false;
+    }
+  }
+}
+
+addProperty('sanduiches', 25.00);
+addProperty('acompanhamentos', 15.00);
+addProperty('sobremesas', 9.90);
+addProperty('bebidas', 5.00);
+
+console.log(menu);
