@@ -1,0 +1,57 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  background-color: green;
+  /* max-width: 50%; */
+  margin: auto;
+  margin-bottom: 50px;
+  padding: 20px 5px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 25px;
+}
+
+img {
+  margin-left: 200px;
+  margin-bottom: 40px;
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-radius: 50%;
+}
+
+.student-info {
+  display: inline-block;
+  text-align: center;
+}
+
+.result {
+  max-width: 40%;
+  margin: auto;
+  margin-top: 70px;
+}
+
+.green {
+  color: white;
+  background-color: green;
+  font-size: 40px;
+}
+
+.red {
+  color: white;
+  background-color: red;
+  font-size: 40px;
+}
