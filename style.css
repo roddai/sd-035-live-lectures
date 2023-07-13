@@ -30,6 +30,7 @@ img {
   margin-bottom: 40px;
   width: 200px;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-radius: 50%;
 }
 
 .student-info {

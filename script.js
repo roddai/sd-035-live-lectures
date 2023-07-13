@@ -76,14 +76,6 @@ const gradePixelsArt = document.getElementById('gradePixelsArt');
 const picture = document.getElementById('picture');
 const results = document.getElementById('results');
 
-// const titles = document.querySelectorAll('p');
-// console.log(titles);
-
-// for (let index = 0; index < titles.length; index += 1) {
-//   titles[index].style.border = '5px solid blue';
-//   titles[index].style.border = '5px solid blue';
-// }
-
 const getStudentInfo = () => {
   const array = students35.studentsInfo;
   const number = randomIndex(array.length);
@@ -93,7 +85,20 @@ const getStudentInfo = () => {
   gradePirilampo.innerText = array[number].projectPirilampo;
   gradePixelsArt.innerText = array[number].projectPixelsArt;
   picture.src = array[number].picture;
-  results.innerText = 'Ainda nada!!!';
+  // results.innerText = 'Ainda nada!!!';
+  verifyScore();
+}
+
+const verifyScore = () => {
+  const sum = parseInt(gradeLessonsLearned.innerText) + parseInt(gradePirilampo.innerText) + parseInt(gradePixelsArt.innerText);
+
+  if (sum >= 85) {
+    results.innerText = `${sum} - Parabéns, ${studentName.innerText}!`;
+    results.className = 'green';
+  } else {
+    results.innerText = `${sum} - Não foi desta vez, ${studentName.innerText}`;
+    results.className = 'red';
+  }
 }
 
 getStudentInfo();
