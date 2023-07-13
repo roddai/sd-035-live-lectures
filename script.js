@@ -66,6 +66,7 @@ const students35 = {
     },
   ]
 }
+
 const randomIndex = (number) => Math.floor(Math.random() * number);
 
 const studentName = document.querySelector('#name');
@@ -75,10 +76,24 @@ const gradePixelsArt = document.getElementById('gradePixelsArt');
 const picture = document.getElementById('picture');
 const results = document.getElementById('results');
 
-const titles = document.querySelectorAll('p');
-console.log(titles);
+// const titles = document.querySelectorAll('p');
+// console.log(titles);
 
-for (let index = 0; index < titles.length; index += 1) {
-  titles[index].style.border = '5px solid blue';
-  titles[index].style.border = '5px solid blue';
+// for (let index = 0; index < titles.length; index += 1) {
+//   titles[index].style.border = '5px solid blue';
+//   titles[index].style.border = '5px solid blue';
+// }
+
+const getStudentInfo = () => {
+  const array = students35.studentsInfo;
+  const number = randomIndex(array.length);
+
+  studentName.innerText = array[number].studentName;
+  gradeLessonsLearned.innerText = array[number].projectLessonsLearned;
+  gradePirilampo.innerText = array[number].projectPirilampo;
+  gradePixelsArt.innerText = array[number].projectPixelsArt;
+  picture.src = array[number].picture;
+  results.innerText = 'Ainda nada!!!';
 }
+
+getStudentInfo();
