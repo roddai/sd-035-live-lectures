@@ -223,9 +223,7 @@ const getStudentInfo = () => {
   picture.src = array[number].picture;
   // results.innerText = 'Ainda nada!!!';
   verifyScore();
-  createProjectsList('fundamentos');
-  createProjectsList('front_end');
-  createProjectsList('ciencia_computacao');
+  createProjectsList();
 }
 
 const verifyScore = () => {
@@ -240,17 +238,23 @@ const verifyScore = () => {
   }
 }
 
-const createProjectsList = (moduleName) => {
+const createProjectsList = () => {
   const newTitle = document.createElement('h2');
   newTitle.innerText = 'Projetos Futuros';
   newProjects.appendChild(newTitle);
 
-  for (let index = 0; index < futureProjects[moduleName].length; index += 1) {
-    const newParagraph = document.createElement('p');
-    const element = futureProjects[moduleName][index];
+  const arrayKeys = Object.keys(futureProjects);
 
-    newParagraph.innerText = `Seção ${element.secao} - ${element.project_name}`;
-    newProjects.appendChild(newParagraph);
+  for (let initialIndex = 0; initialIndex < arrayKeys.length; initialIndex += 1) {
+    const module = arrayKeys[initialIndex]; 
+
+    for (let index = 0; index < futureProjects[module].length; index += 1) {
+      const newParagraph = document.createElement('p');
+      const element = futureProjects[module][index];
+  
+      newParagraph.innerText = `Seção ${element.secao} - ${element.project_name}`;
+      newProjects.appendChild(newParagraph);
+    }
   }
 }
 
