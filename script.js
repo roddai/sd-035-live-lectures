@@ -239,14 +239,14 @@ const verifyScore = () => {
 }
 
 const createProjectsList = () => {
-  const newTitle = document.createElement('h2');
-  newTitle.innerText = 'Projetos Futuros';
-  newProjects.appendChild(newTitle);
-
+  
   const arrayKeys = Object.keys(futureProjects);
-
+  
   for (let initialIndex = 0; initialIndex < arrayKeys.length; initialIndex += 1) {
     const module = arrayKeys[initialIndex]; 
+    const newTitle = document.createElement('h2');
+    newTitle.innerText = module.toUpperCase();
+    newProjects.appendChild(newTitle);
 
     for (let index = 0; index < futureProjects[module].length; index += 1) {
       const newParagraph = document.createElement('p');
