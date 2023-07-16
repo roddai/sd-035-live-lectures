@@ -239,7 +239,6 @@ const verifyScore = () => {
 }
 
 const createProjectsList = () => {
-  
   const arrayKeys = Object.keys(futureProjects);
   
   for (let initialIndex = 0; initialIndex < arrayKeys.length; initialIndex += 1) {
@@ -249,10 +248,11 @@ const createProjectsList = () => {
     newProjects.appendChild(newTitle);
 
     for (let index = 0; index < futureProjects[module].length; index += 1) {
-      const newParagraph = document.createElement('p');
       const element = futureProjects[module][index];
-  
+
+      const newParagraph = document.createElement('p');
       newParagraph.innerText = `Seção ${element.secao} - ${element.project_name}`;
+      newParagraph.className = 'rodsEffect';
       newProjects.appendChild(newParagraph);
     }
   }
