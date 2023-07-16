@@ -75,6 +75,7 @@ const gradePirilampo = document.getElementById('gradePirilampo');
 const gradePixelsArt = document.getElementById('gradePixelsArt');
 const picture = document.getElementById('picture');
 const results = document.getElementById('results');
+const newProjects = document.querySelector('.future-projects');
 
 const getStudentInfo = () => {
   const array = students35.studentsInfo;
@@ -101,4 +102,18 @@ const verifyScore = () => {
   }
 }
 
+const createProjectsList = () => {
+  const newTitle = document.createElement('h2');
+  newTitle.innerText = 'Projetos Futuros';
+  newProjects.appendChild(newTitle);
+  console.log(newTitle);
+}
+
 getStudentInfo();
+createProjectsList();
+
+/* Cria elementos de forma dinâmica.
+1) criar o elemento com document.createElement();
+2) adiciona propriedades, texto, etc.
+3) adiciona na página com appendChild(); a) onde? / b) método / c) quem?
+*/
