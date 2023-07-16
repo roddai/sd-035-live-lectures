@@ -223,6 +223,9 @@ const getStudentInfo = () => {
   picture.src = array[number].picture;
   // results.innerText = 'Ainda nada!!!';
   verifyScore();
+  createProjectsList('fundamentos');
+  createProjectsList('front_end');
+  createProjectsList('ciencia_computacao');
 }
 
 const verifyScore = () => {
@@ -237,15 +240,23 @@ const verifyScore = () => {
   }
 }
 
-const createProjectsList = () => {
+const createProjectsList = (moduleName) => {
   const newTitle = document.createElement('h2');
   newTitle.innerText = 'Projetos Futuros';
   newProjects.appendChild(newTitle);
-  console.log(newTitle);
+
+  for (let index = 0; index < futureProjects[moduleName].length; index += 1) {
+    const newParagraph = document.createElement('p');
+    const element = futureProjects[moduleName][index];
+
+    newParagraph.innerText = `Seção ${element.secao} - ${element.project_name}`;
+    newProjects.appendChild(newParagraph);
+  }
 }
 
 getStudentInfo();
-createProjectsList();
+
+
 
 /* Cria elementos de forma dinâmica.
 1) criar o elemento com document.createElement();
