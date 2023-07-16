@@ -67,6 +67,141 @@ const students35 = {
   ]
 }
 
+const futureProjects = {
+  fundamentos: [
+    {
+      secao: 5,
+      project_name: 'Trybewarts',
+    },
+    {
+      secao: 6,
+      project_name: 'Unit Tests',
+    },
+    {
+      secao: 7,
+      project_name: 'Zoo Functions',
+    }
+  ],
+  front_end: [
+    {
+      secao: 1,
+      project_name: 'Shopping Cart',
+    },
+    {
+      secao: 2,
+      project_name: 'Solar System',
+    },
+    {
+      secao: 3,
+      project_name: 'Tryunfo',
+    },
+    {
+      secao: 4,
+      project_name: 'TrybeTunes',
+    },
+    {
+      secao: 5,
+      project_name: 'Front-end Online Store',
+    },
+    {
+      secao: 6,
+      project_name: 'Testes em React',
+    },
+    {
+      secao: 7,
+      project_name: 'Trybe Wallet',
+    },
+    {
+      secao: 8,
+      project_name: 'Jogo de Trivia',
+    },
+    {
+      secao: 9,
+      project_name: 'StarWars Datatable com Context API e Hooks',
+    },
+    {
+      secao: 10,
+      project_name: 'App de Receitas',
+    }
+  ],
+  back_end: [
+    {
+      secao: 1,
+      project_name: 'Docker Todo-List',
+    },
+    {
+      secao: 2,
+      project_name: 'All For One',
+    },
+    {
+      secao: 3,
+      project_name: 'One For All',
+    },
+    {
+      secao: 4,
+      project_name: 'Talker Manager',
+    },
+    {
+      secao: 5,
+      project_name: 'Store Manager',
+    },
+    {
+      secao: 6,
+      project_name: 'API de Blogs',
+    },
+    {
+      secao: 8,
+      project_name: 'Trybesmith',
+    },
+    {
+      secao: 9,
+      project_name: 'Trybers and Dragons',
+    },
+    {
+      secao: 10,
+      project_name: 'TFC - Trybe Futebol Clube',
+    },
+    {
+      secao: 11,
+      project_name: 'Commerce',
+    },
+    {
+      secao: 12,
+      project_name: 'Car Shop',
+    },
+    {
+      secao: 13,
+      project_name: 'App de Delivery',
+    },
+  ],
+  ciencia_computacao: [
+    {
+      secao: 1,
+      project_name: 'Job Insights',
+    },
+    {
+      secao: 2,
+      project_name: 'Relatório de Estoque',
+    },
+    {
+      secao: 3,
+      project_name: 'Tech News',
+    },
+    {
+      secao: 4,
+      project_name: 'Algoritmos',
+    },
+    {
+      secao: 5,
+      project_name: 'TING - Trybe is Not Google',
+    },
+    {
+      secao: 6,
+      project_name: 'Restaurant Orders',
+    },
+  ]
+}
+
 const randomIndex = (number) => Math.floor(Math.random() * number);
 
 const studentName = document.querySelector('#name');
