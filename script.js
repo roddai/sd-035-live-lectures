@@ -203,6 +203,7 @@ const futureProjects = {
 }
 
 const randomIndex = (number) => Math.floor(Math.random() * number);
+const createElement = (element) => document.createElement(element);
 
 const studentName = document.querySelector('#name');
 const gradeLessonsLearned = document.querySelector('#gradeLessonsLearned');
@@ -211,16 +212,55 @@ const gradePixelsArt = document.getElementById('gradePixelsArt');
 const picture = document.getElementById('picture');
 const results = document.getElementById('results');
 const newProjects = document.querySelector('.future-projects');
+const main = document.querySelector('main');
+const darkLightMode = document.querySelector('#dark-light');
 
-const getStudentInfo = () => {
-  const array = students35.studentsInfo;
-  const number = randomIndex(array.length);
+const array = students35.studentsInfo;
 
-  studentName.innerText = array[number].studentName;
-  gradeLessonsLearned.innerText = array[number].projectLessonsLearned;
-  gradePirilampo.innerText = array[number].projectPirilampo;
-  gradePixelsArt.innerText = array[number].projectPixelsArt;
-  picture.src = array[number].picture;
+// Retorna um array com os nomes de estudantes
+const generateStudentesName = () => {
+  const arrayOfNames = [];
+
+  for (let index = 0; index < array.length; index += 1) {
+    arrayOfNames.push(array[index].studentName);
+  }
+  
+  addNames(arrayOfNames);
+}
+
+const addNames = (arrayOfNames) => {
+  for (let index = 0; index < arrayOfNames.length; index += 1) {
+    const newParagraph = createElement('p');
+
+    newParagraph.innerText = arrayOfNames[index];
+    newParagraph.className = 'rodsEffect studentName';
+
+    main.firstElementChild.appendChild(newParagraph);
+  }
+}
+
+const addEventToNames = () => {
+  const names = document.querySelectorAll('.studentName');
+
+  for (let index = 0; index < names.length; index += 1) {
+    names[index].addEventListener('click', (event) => {
+      const capture = event.target.innerText;
+
+      getStudentInfo(capture);
+    });
+  }
+}
+
+const getStudentInfo = (capturedName) => {
+  for (let index = 0; index < array.length; index += 1) {
+    if (array[index].studentName === capturedName) {
+      studentName.innerText = capturedName;
+      gradeLessonsLearned.innerText = array[index].projectLessonsLearned;
+      gradePirilampo.innerText = array[index].projectPirilampo;
+      gradePixelsArt.innerText = array[index].projectPixelsArt;
+      picture.src = array[index].picture;
+    }
+  }
   // results.innerText = 'Ainda nada!!!';
   verifyScore();
   createProjectsList();
@@ -243,19 +283,27 @@ const createProjectsList = () => {
   
   for (let initialIndex = 0; initialIndex < arrayKeys.length; initialIndex += 1) {
     const module = arrayKeys[initialIndex]; 
-    const newTitle = document.createElement('h2');
+    const newTitle = createElement('h2');
     newTitle.innerText = module.toUpperCase();
     newProjects.appendChild(newTitle);
 
     for (let index = 0; index < futureProjects[module].length; index += 1) {
       const element = futureProjects[module][index];
 
-      const newParagraph = document.createElement('p');
+      const newParagraph = createElement('p');
       newParagraph.innerText = `Seção ${element.secao} - ${element.project_name}`;
       newParagraph.className = 'rodsEffect';
       newProjects.appendChild(newParagraph);
+
+      fixedBackgroundColor(newParagraph);
     }
   }
+}
+
+const fixedBackgroundColor = (newParagraph) => {
+  newParagraph.addEventListener('click', () => {
+    newParagraph.style.backgroundColor = 'magenta';
+  })
 }
 
 const removeProject = (project) => {
@@ -270,18 +318,26 @@ const removeProject = (project) => {
   }
 }
 
-getStudentInfo();
+const addOrRemoveDarkMode = () => {
+  darkLightMode.addEventListener('click', () => {
+    const capturedBody = document.body;
+    
+    if (capturedBody.className === 'dark') {
+      capturedBody.className = 'light';
+    } else {
+      capturedBody.className = 'dark';
+    }
+  })
+}
 
-removeProject('Seção 7 - Zoo Functions');
-removeProject('Seção 3 - Tryunfo');
-removeProject('Seção 4 - Talker Manager');
-removeProject('Seção 5 - TING - Trybe is Not Google');
+window.onload = () => {
+  generateStudentesName();
+  getStudentInfo('Rods');
+  addEventToNames();
+  addOrRemoveDarkMode();
+}
 
-
-
-
-/* Cria elementos de forma dinâmica.
-1) criar o elemento com document.createElement();
-2) adiciona propriedades, texto, etc.
-3) adiciona na página com appendChild(); a) onde? / b) método / c) quem?
-*/
+// removeProject('Seção 7 - Zoo Functions');
+// removeProject('Seção 3 - Tryunfo');
+// removeProject('Seção 4 - Talker Manager');
+// removeProject('Seção 5 - TING - Trybe is Not Google');
