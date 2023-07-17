@@ -230,7 +230,6 @@ const generateStudentesName = () => {
 const addNames = (arrayOfNames) => {
   for (let index = 0; index < arrayOfNames.length; index += 1) {
     const newParagraph = createElement('p');
-    console.log(newParagraph);
 
     newParagraph.innerText = arrayOfNames[index];
     newParagraph.className = 'rodsEffect studentName';
@@ -239,14 +238,28 @@ const addNames = (arrayOfNames) => {
   }
 }
 
-const getStudentInfo = () => {
-  const number = randomIndex(array.length);
+const addEventToNames = () => {
+  const names = document.querySelectorAll('.studentName');
 
-  studentName.innerText = array[number].studentName;
-  gradeLessonsLearned.innerText = array[number].projectLessonsLearned;
-  gradePirilampo.innerText = array[number].projectPirilampo;
-  gradePixelsArt.innerText = array[number].projectPixelsArt;
-  picture.src = array[number].picture;
+  for (let index = 0; index < names.length; index += 1) {
+    names[index].addEventListener('click', (event) => {
+      const capture = event.target.innerText;
+
+      getStudentInfo(capture);
+    });
+  }
+}
+
+const getStudentInfo = (capturedName) => {
+  for (let index = 0; index < array.length; index += 1) {
+    if (array[index].studentName === capturedName) {
+      studentName.innerText = capturedName;
+      gradeLessonsLearned.innerText = array[index].projectLessonsLearned;
+      gradePirilampo.innerText = array[index].projectPirilampo;
+      gradePixelsArt.innerText = array[index].projectPixelsArt;
+      picture.src = array[index].picture;
+    }
+  }
   // results.innerText = 'Ainda nada!!!';
   verifyScore();
   createProjectsList();
@@ -304,8 +317,12 @@ const removeProject = (project) => {
   }
 }
 
-generateStudentesName();
-getStudentInfo();
+
+window.onload = () => {
+  generateStudentesName();
+  getStudentInfo('Rods');
+  addEventToNames();
+}
 
 // removeProject('Seção 7 - Zoo Functions');
 // removeProject('Seção 3 - Tryunfo');
