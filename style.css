@@ -66,3 +66,13 @@ img {
   background-color: greenyellow;
   color: green;
 }
+
+.studentName {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#names {
+  border: 2px solid green;
+}

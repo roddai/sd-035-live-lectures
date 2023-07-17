@@ -212,9 +212,34 @@ const gradePixelsArt = document.getElementById('gradePixelsArt');
 const picture = document.getElementById('picture');
 const results = document.getElementById('results');
 const newProjects = document.querySelector('.future-projects');
+const main = document.querySelector('main');
+
+const array = students35.studentsInfo;
+
+// Retorna um array com os nomes de estudantes
+const generateStudentesName = () => {
+  const arrayOfNames = [];
+
+  for (let index = 0; index < array.length; index += 1) {
+    arrayOfNames.push(array[index].studentName);
+  }
+  
+  addNames(arrayOfNames);
+}
+
+const addNames = (arrayOfNames) => {
+  for (let index = 0; index < arrayOfNames.length; index += 1) {
+    const newParagraph = createElement('p');
+    console.log(newParagraph);
+
+    newParagraph.innerText = arrayOfNames[index];
+    newParagraph.className = 'rodsEffect studentName';
+
+    main.firstElementChild.appendChild(newParagraph);
+  }
+}
 
 const getStudentInfo = () => {
-  const array = students35.studentsInfo;
   const number = randomIndex(array.length);
 
   studentName.innerText = array[number].studentName;
@@ -279,6 +304,7 @@ const removeProject = (project) => {
   }
 }
 
+generateStudentesName();
 getStudentInfo();
 
 // removeProject('Seção 7 - Zoo Functions');
