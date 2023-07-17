@@ -203,6 +203,7 @@ const futureProjects = {
 }
 
 const randomIndex = (number) => Math.floor(Math.random() * number);
+const createElement = (element) => document.createElement(element);
 
 const studentName = document.querySelector('#name');
 const gradeLessonsLearned = document.querySelector('#gradeLessonsLearned');
@@ -243,19 +244,27 @@ const createProjectsList = () => {
   
   for (let initialIndex = 0; initialIndex < arrayKeys.length; initialIndex += 1) {
     const module = arrayKeys[initialIndex]; 
-    const newTitle = document.createElement('h2');
+    const newTitle = createElement('h2');
     newTitle.innerText = module.toUpperCase();
     newProjects.appendChild(newTitle);
 
     for (let index = 0; index < futureProjects[module].length; index += 1) {
       const element = futureProjects[module][index];
 
-      const newParagraph = document.createElement('p');
+      const newParagraph = createElement('p');
       newParagraph.innerText = `Seção ${element.secao} - ${element.project_name}`;
       newParagraph.className = 'rodsEffect';
       newProjects.appendChild(newParagraph);
+
+      fixedBackgroundColor(newParagraph);
     }
   }
+}
+
+const fixedBackgroundColor = (newParagraph) => {
+  newParagraph.addEventListener('click', () => {
+    newParagraph.style.backgroundColor = 'magenta';
+  })
 }
 
 const removeProject = (project) => {
@@ -272,10 +281,10 @@ const removeProject = (project) => {
 
 getStudentInfo();
 
-removeProject('Seção 7 - Zoo Functions');
-removeProject('Seção 3 - Tryunfo');
-removeProject('Seção 4 - Talker Manager');
-removeProject('Seção 5 - TING - Trybe is Not Google');
+// removeProject('Seção 7 - Zoo Functions');
+// removeProject('Seção 3 - Tryunfo');
+// removeProject('Seção 4 - Talker Manager');
+// removeProject('Seção 5 - TING - Trybe is Not Google');
 
 
 
