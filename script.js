@@ -258,7 +258,25 @@ const createProjectsList = () => {
   }
 }
 
+const removeProject = (project) => {
+  const projectsList = document.querySelectorAll('.rodsEffect');
+  
+  for (let index = 0; index < projectsList.length; index += 1) {
+    if (projectsList[index].innerText === project) {
+      let parent = projectsList[index].parentElement;
+      
+      parent.removeChild(projectsList[index]);
+    }
+  }
+}
+
 getStudentInfo();
+
+removeProject('Seção 7 - Zoo Functions');
+removeProject('Seção 3 - Tryunfo');
+removeProject('Seção 4 - Talker Manager');
+removeProject('Seção 5 - TING - Trybe is Not Google');
+
 
 
 
