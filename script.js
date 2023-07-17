@@ -213,6 +213,7 @@ const picture = document.getElementById('picture');
 const results = document.getElementById('results');
 const newProjects = document.querySelector('.future-projects');
 const main = document.querySelector('main');
+const darkLightMode = document.querySelector('#dark-light');
 
 const array = students35.studentsInfo;
 
@@ -317,23 +318,26 @@ const removeProject = (project) => {
   }
 }
 
+const addOrRemoveDarkMode = () => {
+  darkLightMode.addEventListener('click', () => {
+    const capturedBody = document.body;
+    
+    if (capturedBody.className === 'dark') {
+      capturedBody.className = 'light';
+    } else {
+      capturedBody.className = 'dark';
+    }
+  })
+}
 
 window.onload = () => {
   generateStudentesName();
   getStudentInfo('Rods');
   addEventToNames();
+  addOrRemoveDarkMode();
 }
 
 // removeProject('Seção 7 - Zoo Functions');
 // removeProject('Seção 3 - Tryunfo');
 // removeProject('Seção 4 - Talker Manager');
 // removeProject('Seção 5 - TING - Trybe is Not Google');
-
-
-
-
-/* Cria elementos de forma dinâmica.
-1) criar o elemento com document.createElement();
-2) adiciona propriedades, texto, etc.
-3) adiciona na página com appendChild(); a) onde? / b) método / c) quem?
-*/

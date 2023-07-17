@@ -7,6 +7,25 @@ main {
   text-align: center;
 }
 
+header p {
+  width: 150px;
+  margin-left: 85%;
+  text-align: center;
+  border: 1px solid green;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.dark {
+  background-color: #2a2a2f;
+  color: white;
+}
+
+.light {
+  background-color: white;
+  color: black;
+}
+
 h1 {
   text-align: center;
   color: white;
