@@ -214,6 +214,8 @@ const results = document.getElementById('results');
 const newProjects = document.querySelector('.future-projects');
 const main = document.querySelector('main');
 const darkLightMode = document.querySelector('#dark-light');
+const restore = document.querySelector('#restore');
+console.log(restore);
 
 const array = students35.studentsInfo;
 
@@ -339,7 +341,13 @@ const restoreLocalStorage = () => {
   const restoreData = localStorage.getItem('colorPage');
   const capturedBody = document.body;
   capturedBody.className = restoreData;
+}
 
+const restoreDefault = () => {
+  restore.addEventListener('click', () => {
+    localStorage.clear();
+    location.reload();
+  });
 }
 
 window.onload = () => {
@@ -354,4 +362,5 @@ window.onload = () => {
   }
   
   restoreLocalStorage();
+  restoreDefault();
 }

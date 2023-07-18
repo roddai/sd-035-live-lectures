@@ -9,11 +9,26 @@ main {
 
 header p {
   width: 150px;
-  margin-left: 85%;
+  /* margin-left: 85%; */
   text-align: center;
   border: 1px solid green;
   border-radius: 20px;
   padding: 10px;
+  display: inline-block;
+}
+
+header div {
+  text-align: right;
+}
+
+#restore {
+  width: 210px;
+  /* margin-left: 85%; */
+  text-align: center;
+  border: 1px solid green;
+  border-radius: 20px;
+  padding: 10px;
+  display: inline-block;
 }
 
 .dark {
