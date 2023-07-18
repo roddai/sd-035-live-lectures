@@ -4,7 +4,7 @@ const students35 = {
       picture: "./images/anadu.png",
       trybe: "CH35",
       studentName: "AnaDu",
-      projectLessonsLearned: 5, 
+      projectLessonsLearned: 5,
       projectPirilampo: 50,
       projectPixelsArt: 35,
     },
@@ -12,7 +12,7 @@ const students35 = {
       picture: "./images/cadu.png",
       trybe: "CH35",
       studentName: "Cadu",
-      projectLessonsLearned: 2, 
+      projectLessonsLearned: 2,
       projectPirilampo: 30,
       projectPixelsArt: 20,
     },
@@ -20,7 +20,7 @@ const students35 = {
       picture: "./images/gus.png",
       trybe: "CH35",
       studentName: "Gus",
-      projectLessonsLearned: 1, 
+      projectLessonsLearned: 1,
       projectPirilampo: 10,
       projectPixelsArt: 10,
     },
@@ -28,7 +28,7 @@ const students35 = {
       picture: "./images/luquinha.png",
       trybe: "CH35",
       studentName: "Luquinha",
-      projectLessonsLearned: 4, 
+      projectLessonsLearned: 4,
       projectPirilampo: 30,
       projectPixelsArt: 40,
     },
@@ -36,7 +36,7 @@ const students35 = {
       picture: "./images/nat.png",
       trybe: "CH35",
       studentName: "Nat",
-      projectLessonsLearned: 5, 
+      projectLessonsLearned: 5,
       projectPirilampo: 55,
       projectPixelsArt: 40,
     },
@@ -44,7 +44,7 @@ const students35 = {
       picture: "./images/rods.png",
       trybe: "CH35",
       studentName: "Rods",
-      projectLessonsLearned: 4, 
+      projectLessonsLearned: 4,
       projectPirilampo: 50,
       projectPixelsArt: 31,
     },
@@ -52,7 +52,7 @@ const students35 = {
       picture: "./images/vic.png",
       trybe: "CH35",
       studentName: "Vic",
-      projectLessonsLearned: 4, 
+      projectLessonsLearned: 4,
       projectPirilampo: 45,
       projectPixelsArt: 31,
     },
@@ -60,7 +60,7 @@ const students35 = {
       picture: "./images/vitor.png",
       trybe: "CH35",
       studentName: "Vitor",
-      projectLessonsLearned: 5, 
+      projectLessonsLearned: 5,
       projectPirilampo: 50,
       projectPixelsArt: 31,
     },
@@ -224,7 +224,7 @@ const generateStudentesName = () => {
   for (let index = 0; index < array.length; index += 1) {
     arrayOfNames.push(array[index].studentName);
   }
-  
+
   addNames(arrayOfNames);
 }
 
@@ -279,10 +279,14 @@ const verifyScore = () => {
 }
 
 const createProjectsList = () => {
+  if (newProjects.firstElementChild) {
+    newProjects.innerHTML = ' ';
+  }
+
   const arrayKeys = Object.keys(futureProjects);
-  
+
   for (let initialIndex = 0; initialIndex < arrayKeys.length; initialIndex += 1) {
-    const module = arrayKeys[initialIndex]; 
+    const module = arrayKeys[initialIndex];
     const newTitle = createElement('h2');
     newTitle.innerText = module.toUpperCase();
     newProjects.appendChild(newTitle);
@@ -318,7 +322,7 @@ const removeProject = (newParagraph) => {
 const addOrRemoveDarkMode = () => {
   darkLightMode.addEventListener('click', () => {
     const capturedBody = document.body;
-    
+
     if (capturedBody.className === 'dark') {
       capturedBody.className = 'light';
     } else {
