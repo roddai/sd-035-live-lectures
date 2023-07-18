@@ -260,6 +260,8 @@ const getStudentInfo = (capturedName) => {
       gradePirilampo.innerText = array[index].projectPirilampo;
       gradePixelsArt.innerText = array[index].projectPixelsArt;
       picture.src = array[index].picture;
+
+      localStorage.setItem('studentName', capturedName);
     }
   }
   // results.innerText = 'Ainda nada!!!';
@@ -336,13 +338,20 @@ const addOrRemoveDarkMode = () => {
 const restoreLocalStorage = () => {
   const restoreData = localStorage.getItem('colorPage');
   const capturedBody = document.body;
-
   capturedBody.className = restoreData;
+
 }
 
 window.onload = () => {
-  generateStudentesName();
-  getStudentInfo('Rods');
   addOrRemoveDarkMode();
+  generateStudentesName();
+
+  if (localStorage.getItem('studentName') === null) {
+    getStudentInfo('Rods');
+  } else {
+    const nameLocalStorage = localStorage.getItem('studentName');
+    getStudentInfo(nameLocalStorage);
+  }
+  
   restoreLocalStorage();
 }
