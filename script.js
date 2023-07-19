@@ -215,7 +215,6 @@ const newProjects = document.querySelector('.future-projects');
 const main = document.querySelector('main');
 const darkLightMode = document.querySelector('#dark-light');
 const restore = document.querySelector('#restore');
-console.log(restore);
 
 const array = students35.studentsInfo;
 
@@ -263,13 +262,49 @@ const getStudentInfo = (capturedName) => {
       gradePixelsArt.innerText = array[index].projectPixelsArt;
       picture.src = array[index].picture;
 
-      localStorage.setItem('studentName', capturedName);
+      // localStorage.setItem('studentName', capturedName);
+
+      //EXEMPLO COM OBJETOS NO LOCAL STORAGE
+      // const objData = {
+      //   student: capturedName,
+      //   projLessons: gradeLessonsLearned.innerText,
+      //   projPiri: gradePirilampo.innerText,
+      //   projPixes: gradePixelsArt.innerText,
+      //   image: array[index].picture,
+      // }
+      // localStorage.setItem('studentData', JSON.stringify(objData));
+
+      //EXEMPLO COM ARRAYS NO LOCAL STORAGE
+      // const myArray = [];
+      // for (value of array) {
+      //   myArray.push(value.studentName);
+      // }
+      // localStorage.setItem('studentArray', JSON.stringify(myArray));
+
+      //EXEMPLO COM NUMBERS NO LOCAL STORAGE
+      // const sectionNumber = students35.studentsInfo[0].projectLessonsLearned;
+      // localStorage.setItem('number', JSON.stringify(sectionNumber));
     }
   }
-  // results.innerText = 'Ainda nada!!!';
+
   verifyScore();
   createProjectsList();
 }
+
+//RECUPERANDO OBJETOS DO LOCAL STORAGE
+// const restoreObj = JSON.parse(localStorage.getItem('studentData'));
+// console.log(restoreObj);
+// console.log(typeof restoreObj);
+
+//RECUPERANDO ARRAYS DO LOCAL STORAGE
+// const restoreArray = JSON.parse(localStorage.getItem('studentArray'));
+// console.log(restoreArray);
+// console.log(typeof restoreArray);
+
+//RECUPERANDO NUMBERS DO LOCAL STORAGE
+// const restoreNumber = JSON.parse(localStorage.getItem('number'));
+// console.log(restoreNumber);
+// console.log(typeof restoreNumber);
 
 const verifyScore = () => {
   const sum = parseInt(gradeLessonsLearned.innerText) + parseInt(gradePirilampo.innerText) + parseInt(gradePixelsArt.innerText);
@@ -360,7 +395,7 @@ window.onload = () => {
     const nameLocalStorage = localStorage.getItem('studentName');
     getStudentInfo(nameLocalStorage);
   }
-  
+
   restoreLocalStorage();
   restoreDefault();
 }
