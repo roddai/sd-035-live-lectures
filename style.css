@@ -105,7 +105,6 @@ nav, ul {
 }
 
 .know-the-farao hr {
-  /* border: 5px solid red; */
   width: 200px;
   height: 5px;
   margin-bottom: 70px;
@@ -139,58 +138,63 @@ nav, ul {
 }
 
 .features {
-  /* background-color: rgb(62, 78, 188); */
-  /* padding: 100px 50px; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* width: 100%; */
+  background-color: rgb(62, 78, 188);
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .features h3 {
-  /* font-size: 25px; */
-  /* margin-bottom: 35px; */
-  /* text-align: center; */
-  /* color: white; */
+  font-size: 25px;
+  margin-bottom: 35px;
+  text-align: center;
+  color: white;
 }
 
 .features p {
-  /* max-width: 800px; */
-  /* margin-bottom: 35px; */
-  /* text-align: center; */
-  /* color: white; */
+  max-width: 800px;
+  margin-bottom: 35px;
+  text-align: center;
+  color: white;
 }
 
 .features hr {
-  /* width: 200px; */
-  /* height: 2px; */
-  /* margin-bottom: 70px; */
-  /* border: none; */
-  /* background-color: white; */
+  width: 200px;
+  height: 5px;
+  margin-bottom: 70px;
+  border: none;
+  background-color: white;
 }
 
 .features .grid {
-  /* max-width: 80%; */
+  max-width: 80%;
 }
 
 .features .grid li {
-  /* padding: 0 30px; */
-  /* text-align: center; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* max-width: 30%; */
+  padding: 0 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
 }
 
 .features .grid li i {
-  /* color: rgb(255, 166, 0); */
-  /* font-size: 35px; */
-  /* margin-bottom: 30px; */
+  color: rgb(255, 166, 0);
+  font-size: 35px;
+  margin-bottom: 30px;
 }
 
 .features .grid li h4 {
-  /* font-size: 25px; */
-  /* color: rgb(255, 166, 0); */
-  /* margin-bottom: 30px; */
+  font-size: 25px;
+  color: rgb(255, 166, 0);
+  margin-bottom: 30px;
+}
+
+ol, ul {
+  /* border: 5px solid red; */
+  padding-left: 0;
 }
 
 .newsletter {
