@@ -1,40 +1,46 @@
 * {
-  /* margin: 0; */
-  /* padding: 0; */
-  /* font-size: 100%; */
-  /* box-sizing: border-box; */
-  /* font-family: 'Open Sans', sans-serif; */
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 
 header {
-  /* background-color: white; */
-  /* width: 100%; */
-  /* position: fixed; */
-  /* padding: 5px 50px; */
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
-  /* box-shadow: 1px 1px 5px black; */
+  /* border: 5px solid red; */
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  padding: 5px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 1px 5px rgb(59, 61, 189);
 }
 
 header img {
-  /* width: 120px; */
+  width: 120px;
 }
 
 a {
-  /* text-decoration: none; */
-  /* color: black; */
-  /* cursor: pointer; */
-  /* opacity: 0.8; */
-  /* padding: 0 10px; */
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 0 10px;
 }
 
 a:hover {
-  /* opacity: 1; */
+  opacity: 1;
+}
+
+nav a:hover {
+  background-color: rgb(240, 192, 119);
+  border-radius: 30px;
 }
 
 nav, ul {
-  /* list-style: none; */
+  list-style: none;
 }
 
 .hero {
