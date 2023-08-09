@@ -43,7 +43,6 @@ nav, ul {
 }
 
 .hero {
-  /* border: 5px solid red; */
   background-image: url(images/farao_hero.jpeg);
   min-height: 100vh;
   background-size: cover;
@@ -85,55 +84,58 @@ nav, ul {
 }
 
 .know-the-farao {
-  /* padding: 100px 50px; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .know-the-farao h3 {
-  /* font-size: 25px; */
-  /* margin-bottom: 35px; */
-  /* text-align: center; */
-  /* color: black; */
+  font-size: 25px;
+  margin-bottom: 35px;
+  text-align: center;
+  color: black;
 }
 
 .know-the-farao p {
-  /* max-width: 800px; */
-  /* margin-bottom: 35px; */
-  /* text-align: center; */
-  /* color: black; */
+  max-width: 800px;
+  margin-bottom: 35px;
+  text-align: center;
+  color: black;
 }
 
 .know-the-farao hr {
-  /* width: 200px; */
-  /* height: 2px; */
-  /* margin-bottom: 70px; */
-  /* border: none; */
-  /* background-color: black; */
+  /* border: 5px solid red; */
+  width: 200px;
+  height: 5px;
+  margin-bottom: 70px;
+  border: none;
+  background-color: black;
 }
 
 .grid {
-  /* width: 100%; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* flex-wrap: wrap; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .grid img {
   /* height: 270px; */
-  /* padding: 10px; */
+  padding: 10px;
 }
 
 .large {
-  /* width: 60%; */
+  width: 60%;
   /* padding: 10px; */
+  /* flex-grow: 1; */
 }
 
 .small {
-  /* width: 40%; */
+  width: 40%;
   /* padding: 10px; */
-  /* align-self: flex-end; */
+  align-self: center;
+  /* flex-shrink: 0; */
 }
 
 .features {
