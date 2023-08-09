@@ -218,7 +218,6 @@ ol, ul {
 }
 
 .newsletter form {
-  /* border: 5px solid red; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -248,20 +247,23 @@ ol, ul {
 }
 
 footer {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* background-color: rgb(62, 78, 188); */
-  /* padding: 50px 0; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(62, 78, 188);
+  padding: 50px 0;
 }
 
-footer > ul {
-  /* display: flex; */
-  /* margin-bottom: 25px; */
+footer ul {
+  display: flex;
+  margin-bottom: 25px;
+  height: 50px;
+  /* border: 5px solid red; */
 }
 
 footer ul li {
-  /* margin-right: 10px; */
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 footer ul li:first-child {
@@ -269,27 +271,34 @@ footer ul li:first-child {
 }
 
 footer ul li i {
-  /* color: rgb(255, 166, 0); */
-  /* font-size: 25px; */
+  color: rgb(255, 166, 0);
+  font-size: 25px;
 }
 
 footer p {
-  /* color: rgb(255, 166, 0); */
-  /* text-align: center; */
+  color: rgb(255, 166, 0);
+  text-align: center;
 }
 
+/* facebook */
 footer ul li:nth-child(1) {
-  /* order: 2; */
+  order: 2;
+  align-self: center;
 }
 
+/* twitter */
 footer ul li:nth-child(2) {
-  /* order: 1; */
+  order: 1;
+  align-self: flex-end;
 }
 
+/* whatsapp */
 footer ul li:nth-child(3) {
-  /* order: 3; */
+  order: 3;
 }
 
+/* instagram */
 footer ul li:nth-child(4) {
-  /* order: 4; */
+  order: 4;
+  align-self: center;
 }
