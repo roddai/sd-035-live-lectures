@@ -324,4 +324,18 @@ footer ul li:nth-child(4) {
   .hero div {
     max-width: 80%;
   }
+
+  .features .grid img {
+    /* max-width: 360px; */
+  }
+
+  .large {
+    width: 90%;
+    padding: 5px;
+  }
+  
+  .small {
+    width: 90%;
+    padding: 5px;
+  }
 }
