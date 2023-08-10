@@ -312,4 +312,16 @@ footer ul li:nth-child(4) {
     justify-content: center;
     /* position: absolute; */
   }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+  
+  .hero h3 {
+    font-size: 15px;
+  }
+
+  .hero div {
+    max-width: 80%;
+  }
 }
