@@ -302,3 +302,14 @@ footer ul li:nth-child(4) {
   order: 4;
   align-self: center;
 }
+
+@media screen and (max-width: 600px) {
+  header nav {
+    display: none;
+  }
+
+  header {
+    justify-content: center;
+    /* position: absolute; */
+  }
+}
