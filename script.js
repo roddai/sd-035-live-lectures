@@ -51,9 +51,11 @@ const addHarryPotterMovie = () => {
 
     result.innerText = `No ano ${year} foi lançado o filme ${getHarryPotterMovie(year)}`;
   
-    document.getElementById('movie').value = "";
   } catch (error) {
     result.innerText = error.message;
+
+  } finally {
+    document.getElementById('movie').value = "";
   }
 }
 
@@ -70,6 +72,9 @@ const getHarryPotterMovie = (year) => {
       return objectMovie.nome;
     }
   }
+  
+  // return `Nenhum filme Harry Potter lançado neste ano.`;
+  throw new Error('Nenhum filme Harry Potter lançado neste ano.');
 }
 
 window.onload = () => {
