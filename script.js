@@ -1,7 +1,9 @@
 const harryPotterMovies = {
   filmes: [
     {
-      "nome": "Harry Potter e a Pedra Filosofal", "ano_lancamento": 2001, "atores_principais": ["Daniel Radcliffe", "Emma Watson", "Rupert Grint"]
+      "nome": "Harry Potter e a Pedra Filosofal", 
+      "ano_lancamento": 2001, 
+      "atores_principais": ["Daniel Radcliffe", "Emma Watson", "Rupert Grint"]
     },
     {
       "nome": "Harry Potter e a Câmara Secreta",
@@ -39,4 +41,30 @@ const harryPotterMovies = {
       "atores_principais": ["Daniel Radcliffe", "Emma Watson", "Rupert Grint"]
     }
   ]
+}
+
+// Função que adiciona um texto com o filme, na página
+const addHarryPotterMovie = () => {
+  const year = document.querySelector('#movie').value;
+  const result = document.querySelector('#result');
+
+  result.innerText = `No ano ${year} foi lançado o filme ${getHarryPotterMovie(year)}`;
+
+  document.getElementById('movie').value = "";
+}
+
+// Função que fornece o filme com base no ano de lançamento
+const getHarryPotterMovie = (year) => {
+  for (let index = 0; index < harryPotterMovies.filmes.length; index += 1) {
+    const objectMovie = harryPotterMovies.filmes[index];
+
+    if (parseInt(year) === objectMovie.ano_lancamento) {
+      return objectMovie.nome;
+    };
+  }
+}
+
+window.onload = () => {
+  const button = document.querySelector('#button');
+  button.addEventListener('click', addHarryPotterMovie);
 }
