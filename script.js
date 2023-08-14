@@ -45,22 +45,30 @@ const harryPotterMovies = {
 
 // Função que adiciona um texto com o filme, na página
 const addHarryPotterMovie = () => {
-  const year = document.querySelector('#movie').value;
-  const result = document.querySelector('#result');
+  try {
+    const year = document.querySelector('#movie').value;
+    const result = document.querySelector('#result');
 
-  result.innerText = `No ano ${year} foi lançado o filme ${getHarryPotterMovie(year)}`;
-
-  document.getElementById('movie').value = "";
+    result.innerText = `No ano ${year} foi lançado o filme ${getHarryPotterMovie(year)}`;
+  
+    document.getElementById('movie').value = "";
+  } catch (error) {
+    result.innerText = error.message;
+  }
 }
 
 // Função que fornece o filme com base no ano de lançamento
 const getHarryPotterMovie = (year) => {
+  if (isNaN(parseInt(year))) {
+    throw new Error('Valor inesperado. Insira um número.');
+  }
+
   for (let index = 0; index < harryPotterMovies.filmes.length; index += 1) {
     const objectMovie = harryPotterMovies.filmes[index];
 
     if (parseInt(year) === objectMovie.ano_lancamento) {
       return objectMovie.nome;
-    };
+    }
   }
 }
 
