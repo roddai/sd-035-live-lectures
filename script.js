@@ -46,4 +46,4 @@ const addHarryPotterMovie = (year) => {
 // console.log(verifyMovieByYear(2010));
 // console.log(verifyMovieByYear(2015));
 
-module.exports = { getHarryPotterMovie, addHarryPotterMovie, verifyMovieByYear };
+module.exports = { harryPotterMovies, getHarryPotterMovie, addHarryPotterMovie, verifyMovieByYear };
