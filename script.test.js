@@ -1,4 +1,4 @@
-const { harryPotterMovies, getHarryPotterMovie, addHarryPotterMovie, verifyMovieByYear } = require('./script');
+const { harryPotterMovies, getHarryPotterMovie, addHarryPotterMovie, verifyMovieByYear, getArrayWithActors } = require('./script');
 
 // 'Testa função que adiciona filmes.'
 describe('Testa função que adiciona filmes - addHarryPotterMovie.', () => {
@@ -77,10 +77,16 @@ describe('Testa função que fornce o título do filme - verifyMovieByYear', () 
 // ===================== USANDO TDD ========================
 
 // 'Testa função que fornece o array com principais atores dos filmes.'
-// 1- 'Verifica se a função getArrayWithActors existe.'
-
-// 2- 'Verifica se a função getArrayWithActors, ao receber o ano 2011 como parâmetro, retorna um array com os principais atores do filme deste ano.'
-
+describe('Testa função que fornece o array com principais atores dos filmes', () => {
+  // 1- 'Verifica se a função getArrayWithActors existe.'
+  test('Verifica se a função getArrayWithActors existe.', () => {
+    expect(typeof getArrayWithActors).toBe('function');
+  })
+  // 2- 'Verifica se a função getArrayWithActors, ao receber o ano 2011 como parâmetro, retorna um array com os principais atores do filme deste ano.'
+  test('Verifica se a função getArrayWithActors, ao receber o ano 2011 como parâmetro, retorna um array com os principais atores do filme deste ano.', () => {
+    expect(getArrayWithActors(2011)).toEqual(["Daniel Radcliffe", "Emma Watson", "Rupert Grint"]);
+  })
+})
 
 // ===================== USANDO .toEqual ========================
 

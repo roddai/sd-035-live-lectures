@@ -32,6 +32,16 @@ const addHarryPotterMovie = (year) => {
   }
 }
 
+// FUNÇÃO QUE DEVOLVE UM ARRAY COM OS PRINCIPAIS ATORES A PARTIR DE UM ANO DE LANÇAMENTO
+const getArrayWithActors = (year) => {
+  for (let index = 0; index < harryPotterMovies.filmes.length; index += 1) {
+    const obj = harryPotterMovies.filmes[index];
+
+    if (obj.ano_lancamento === year) {
+      return obj.atores_principais;
+    }
+  }
+}
 
 
 // console.log(addHarryPotterMovie(2011));
@@ -46,4 +56,6 @@ const addHarryPotterMovie = (year) => {
 // console.log(verifyMovieByYear(2010));
 // console.log(verifyMovieByYear(2015));
 
-module.exports = { harryPotterMovies, getHarryPotterMovie, addHarryPotterMovie, verifyMovieByYear };
+// console.log(getArrayWithActors(2011));
+
+module.exports = { harryPotterMovies, getHarryPotterMovie, addHarryPotterMovie, verifyMovieByYear, getArrayWithActors };
