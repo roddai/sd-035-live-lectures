@@ -1,29 +1,31 @@
 const { getHarryPotterMovie, addHarryPotterMovie, verifyMovieByYear } = require('./script');
 
 // 'Testa função que adiciona filmes.'
-  // 1- 'Verifica se a função addHarryPotterMovie existe.'
-  it('Verifica se a função addHarryPotterMovie existe.', () => {
-    expect(typeof addHarryPotterMovie).toBe('function');
-  })
-
-  // 2- 'Verifica se a função addHarryPotterMovie, ao receber o ano 2011 como parâmetro, retorna o texto "No ano 2011 foi lançado o filme Harry Potter e as Relíquias da Morte - Parte 2".'
-  it('Verifica se a função addHarryPotterMovie, ao receber o ano 2011 como parâmetro, retorna o texto correto.', () => {
-    expect(addHarryPotterMovie(2011)).toBe("No ano 2011 foi lançado o filme Harry Potter e as Relíquias da Morte - Parte 2");
-  })
-
-  // 3- 'Verifica se a função addHarryPotterMovie, ao receber o ano 2008 como parâmetro, retorna o texto "No ano 2008 não foi lançado nenhum filme do Harry Potter".'
-  it('Verifica se a função addHarryPotterMovie, ao receber o ano 2008 como parâmetro, retorna o texto correto.', () => {
-    expect(addHarryPotterMovie(2008)).toBe("No ano 2008 não foi lançado nenhum filme do Harry Potter");
-  });
-
-  // 4- 'Verifica se a função addHarryPotterMovie, ao receber "undefined" como parâmetro, retorna um erro com a mensagem: "Valor inesperado. Insira um número.".'
-  it('Verifica se a função addHarryPotterMovie, ao receber "undefined" como parâmetro, retorna o erro correto.', () => {
-    expect(addHarryPotterMovie(undefined)).toBe("Valor inesperado. Insira um número.");
-  })
-
-  // 5- 'Verifica se a função addHarryPotterMovie, ao receber "xablau" como parâmetro, retorna um erro com a mensagem: "Valor inesperado. Insira um número.".'
-  it('Verifica se a função addHarryPotterMovie, ao receber "xablau" como parâmetro, retorna o erro correto.', () => {
-    expect(addHarryPotterMovie('xablau')).toBe("Valor inesperado. Insira um número.");
+  describe('Testa função que adiciona filmes - addHarryPotterMovie.', () => {
+    // 1- 'Verifica se a função addHarryPotterMovie existe.'
+    it('Verifica se a função addHarryPotterMovie existe.', () => {
+      expect(typeof addHarryPotterMovie).toBe('function');
+    })
+  
+    // 2- 'Verifica se a função addHarryPotterMovie, ao receber o ano 2011 como parâmetro, retorna o texto "No ano 2011 foi lançado o filme Harry Potter e as Relíquias da Morte - Parte 2".'
+    it('Verifica se a função addHarryPotterMovie, ao receber o ano 2011 como parâmetro, retorna o texto correto.', () => {
+      expect(addHarryPotterMovie(2011)).toBe("No ano 2011 foi lançado o filme Harry Potter e as Relíquias da Morte - Parte 2");
+    })
+  
+    // 3- 'Verifica se a função addHarryPotterMovie, ao receber o ano 2008 como parâmetro, retorna o texto "No ano 2008 não foi lançado nenhum filme do Harry Potter".'
+    it('Verifica se a função addHarryPotterMovie, ao receber o ano 2008 como parâmetro, retorna o texto correto.', () => {
+      expect(addHarryPotterMovie(2008)).toBe("No ano 2008 não foi lançado nenhum filme do Harry Potter");
+    });
+  
+    // 4- 'Verifica se a função addHarryPotterMovie, ao receber "undefined" como parâmetro, retorna um erro com a mensagem: "Valor inesperado. Insira um número.".'
+    it('Verifica se a função addHarryPotterMovie, ao receber "undefined" como parâmetro, retorna o erro correto.', () => {
+      expect(addHarryPotterMovie(undefined)).toBe("Valor inesperado. Insira um número.");
+    })
+  
+    // 5- 'Verifica se a função addHarryPotterMovie, ao receber "xablau" como parâmetro, retorna um erro com a mensagem: "Valor inesperado. Insira um número.".'
+    it('Verifica se a função addHarryPotterMovie, ao receber "xablau" como parâmetro, retorna o erro correto.', () => {
+      expect(addHarryPotterMovie('xablau')).toBe("Valor inesperado. Insira um número.");
+    })
   })
 
 // =============================================
