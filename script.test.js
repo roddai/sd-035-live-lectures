@@ -31,7 +31,7 @@ describe('Testa função que adiciona filmes - addHarryPotterMovie.', () => {
 // =============================================
 
 // 'Testa função que fornece o título do filme ou um erro.'
-describe('Testa função que fornece o título do filme ou um erro.', () => {
+describe('Testa função que fornece o título do filme ou um erro - getHarryPotterMovie', () => {
   // 1- 'Verifica se a função getHarryPotterMovie existe.'
   test('Verifica se a função getHarryPotterMovie existe', () => {
     expect(typeof getHarryPotterMovie).toBe('function');
@@ -43,12 +43,12 @@ describe('Testa função que fornece o título do filme ou um erro.', () => {
   });
 
   // 3- 'Verifica se a função getHarryPotterMovie, ao receber o ano 2015 como parâmetro, lança um erro e retorna o texto "No ano 2015 não foi lançado nenhum filme do Harry Potter.'
-  test ('Verifica se a função getHarryPotterMovie, ao receber o ano 2015 como parâmetro, lança um erro', () => {
+  test('Verifica se a função getHarryPotterMovie, ao receber o ano 2015 como parâmetro, lança um erro', () => {
     expect(() => getHarryPotterMovie(2015)).toThrow("No ano 2015 não foi lançado nenhum filme do Harry Potter");
   });
 
   // 4- 'Verifica se a função getHarryPotterMovie, ao receber "xablau" como parâmetro, lança um erro e retorna o texto "Valor inesperado. Insira um número.'
-  test ('Verifica se a função getHarryPotterMovie, ao receber "xablau" como parâmetro, lança um erro', () => {
+  test('Verifica se a função getHarryPotterMovie, ao receber "xablau" como parâmetro, lança um erro', () => {
     expect(() => getHarryPotterMovie('xablau')).toThrow("Valor inesperado. Insira um número.");
   });
 
@@ -57,12 +57,22 @@ describe('Testa função que fornece o título do filme ou um erro.', () => {
 // =============================================
 
 // 'Testa função que fornece o título do filme.'
-// 1- 'Verifica se a função verifyMovieByYear existe.'
+describe('Testa função que fornce o título do filme - verifyMovieByYear', () => {
+  // 1- 'Verifica se a função verifyMovieByYear existe.'
+  test('Verifica se a função verifyMovieByYear existe', () => {
+    expect(typeof verifyMovieByYear).toBe('function');
+  });
 
-// 2- 'Verifica se a função verifyMovieByYear, ao receber o ano 2010 como parâmetro, retorna o filme "Harry Potter e as Relíquias da Morte - Parte 1".'
+  // 2- 'Verifica se a função verifyMovieByYear, ao receber o ano 2010 como parâmetro, retorna o filme "Harry Potter e as Relíquias da Morte - Parte 1".'
+  test('2 - Verifica se a função verifyMovieByYear, ao receber o ano 2010, retorna o filme correto', () => {
+    expect(verifyMovieByYear(2010)).toBe("Harry Potter e as Relíquias da Morte - Parte 1");
+  });
 
-// 3- 'Verifica se a função verifyMovieByYear, ao receber o ano 2015 como parâmetro, retorna "undefined".'
-
+  // 3- 'Verifica se a função verifyMovieByYear, ao receber o ano 2015 como parâmetro, retorna "undefined".'
+  test('3 - Verifica se a função verifyMovieByYear, ao receber o ano 2015 como parâmetro, retorna "undefined".', () => {
+    expect(verifyMovieByYear(2015)).toBe(undefined);
+  });
+})
 
 // ===================== USANDO TDD ========================
 
