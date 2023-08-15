@@ -43,41 +43,48 @@ const harryPotterMovies = {
   ]
 }
 
-// Função que adiciona um texto com o filme, na página
-const addHarryPotterMovie = () => {
-  try {
-    const year = document.querySelector('#movie').value;
-    const result = document.querySelector('#result');
-
-    result.innerText = `No ano ${year} foi lançado o filme ${getHarryPotterMovie(year)}`;
-  
-  } catch (error) {
-    result.innerText = error.message;
-
-  } finally {
-    document.getElementById('movie').value = "";
-  }
-}
-
-// Função que fornece o filme com base no ano de lançamento
+// FUNÇÃO QUE FORNECE TÍTULO DO FILME OU UM ERRO
 const getHarryPotterMovie = (year) => {
-  if (isNaN(parseInt(year))) {
+  if (isNaN(year)) {
     throw new Error('Valor inesperado. Insira um número.');
   }
 
-  for (let index = 0; index < harryPotterMovies.filmes.length; index += 1) {
-    const objectMovie = harryPotterMovies.filmes[index];
+  if (verifyMovieByYear(year) === undefined) {
+    throw new Error(`No ano ${year} não foi lançado nenhum filme do Harry Potter`);
+  } else {
+    return verifyMovieByYear(year);
+  }
+}
 
-    if (parseInt(year) === objectMovie.ano_lancamento) {
-      return objectMovie.nome;
+// FUNÇÃO QUE FORNECE O TÍTULO DO FILME
+const verifyMovieByYear = (year) => {
+  for (let index = 0; index < harryPotterMovies.filmes.length; index += 1) {
+    if (harryPotterMovies.filmes[index].ano_lancamento === year) {
+      return harryPotterMovies.filmes[index]['título'];
     }
   }
-  
-  // return `Nenhum filme Harry Potter lançado neste ano.`;
-  throw new Error('Nenhum filme Harry Potter lançado neste ano.');
 }
 
-window.onload = () => {
-  const button = document.querySelector('#button');
-  button.addEventListener('click', addHarryPotterMovie);
+// FUNÇÃO QUE ADICIONA TEXTO NA SAÍDA DO CONSOLE
+const addHarryPotterMovie = (year) => {
+  try {
+    return `No ano ${year} foi lançado o filme ${getHarryPotterMovie(year)}`;
+
+  } catch (error) {
+    return error.message;
+  }
 }
+
+
+
+// console.log(addHarryPotterMovie(2011));
+// console.log(addHarryPotterMovie(2008));
+// console.log(addHarryPotterMovie('xablau'));
+// console.log(addHarryPotterMovie());
+
+console.log(getHarryPotterMovie(2010));
+// console.log(getHarryPotterMovie(2015));
+// console.log(getHarryPotterMovie('xablau'));
+
+// console.log(verifyMovieByYear(2010));
+// console.log(verifyMovieByYear(2015));
