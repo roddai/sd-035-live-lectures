@@ -60,7 +60,7 @@ const getHarryPotterMovie = (year) => {
 const verifyMovieByYear = (year) => {
   for (let index = 0; index < harryPotterMovies.filmes.length; index += 1) {
     if (harryPotterMovies.filmes[index].ano_lancamento === year) {
-      return harryPotterMovies.filmes[index]['título'];
+      return harryPotterMovies.filmes[index]['nome'];
     }
   }
 }
