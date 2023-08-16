@@ -11,5 +11,7 @@ const findClubByYear = (year) => {
   return `Não houve campeão mundial neste ano`;
 }
 
-console.log(findClubByYear(2000));
-console.log(findClubByYear(2024));
+// console.log(findClubByYear(2000));
+// console.log(findClubByYear(2024));
+
+module.exports = { findClubByYear }
