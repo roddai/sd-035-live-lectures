@@ -1,0 +1,7 @@
+const data = require('./deckCards');
+
+// ORDENAR O ARRAY data.cards, PELO NOME DOS MONSTROS
+
+
+// GERAR UM ARRAY COM OS NOMES DOS MONSTROS, EM ORDEM ALFABÉTICA
+
