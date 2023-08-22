@@ -14,3 +14,6 @@ const cities = [
   { state: 'MG', name: 'João Pinheiro', region: 'SE'}
 ];
 
+const citiesNE = (cities) => cities.filter(city => city.region === 'NE');
+
+console.log(citiesNE(cities));
