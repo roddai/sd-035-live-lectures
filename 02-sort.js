@@ -5,9 +5,8 @@ const scores2 = [2, 10, 21, 1];
 scores.sort();
 scores2.sort(); 
 
-console.log(scores);
-console.log(scores2);
-
+// console.log(scores);
+// console.log(scores2);
 
 // Resolvendo o problema
 
@@ -32,8 +31,8 @@ scores2.sort(comparar);
 scores.sort((a, b) => a - b);
 scores2.sort((a, b) => a - b);
 
-// console.log(scores);
-// console.log(scores2);
+console.log(scores);
+console.log(scores2);
 
 // Ordene os números do array de forma DECRESCENTE
 scores.sort((a, b) => b - a);
