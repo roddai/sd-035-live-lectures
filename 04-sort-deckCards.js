@@ -7,7 +7,7 @@ const compare = (a, b) => {
   return 0;
 }
 
-const sortObjectsMonsters = (cards) => cards.sort(compare);
+// const sortObjectsMonsters = (cards) => cards.sort(compare);
 
 // console.log(sortObjectsMonsters(data.cards));
 
@@ -23,4 +23,12 @@ const sortObjectsMonsters = (cards) => cards.sort(compare);
 const generateSortMonsterNames = (cards) => cards
   .map((card) => card.name).sort();
 
-console.log(generateSortMonsterNames(data.cards));
+// console.log(generateSortMonsterNames(data.cards));
+
+
+// Outra forma
+const sortObjectsMonsters = (cards) => cards.sort(compare).map((object) => {
+  return object.name;
+});
+
+console.log(sortObjectsMonsters(data.cards));
